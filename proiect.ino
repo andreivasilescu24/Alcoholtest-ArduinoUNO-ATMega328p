@@ -41,7 +41,7 @@ void setup() {
   DDRD &= ~(1 << DDD7); // AlcoholSensor
   DDRD &= ~(1 << DDD2); // Button
 
-  // Pull-op resistor on button
+  // Pull-up resistor on button
   PORTD |= (1 << PORTD2);
 
   // LCD initalization
