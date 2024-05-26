@@ -46,6 +46,7 @@ void setup() {
   // Pull-up resistor on button
   PORTD |= (1 << PORTD2);
 
+
   // LCD initalization
   lcd.init();
   lcd.backlight();
@@ -61,6 +62,8 @@ void setup() {
 
   // Interrupt on button
   attachInterrupt(digitalPinToInterrupt(Button), buttonISR, FALLING);
+
+  delay(100);
 }
 
 void buttonISR() {
