@@ -37,6 +37,8 @@ void setup() {
   DDRD |= (1 << DDD4);  // RedLed
   DDRB |= (1 << DDB0);  // Buzzer
 
+  PORTB |= (1 << PORTB0); // Keep the buzzer off
+
   // Input pins
   DDRD &= ~(1 << DDD7); // AlcoholSensor
   DDRD &= ~(1 << DDD2); // Button
@@ -62,6 +64,7 @@ void setup() {
 }
 
 void buttonISR() {
+  Serial.println("INT");
   measureAlcohol = !measureAlcohol;
   if (measureAlcohol) {
     startMeasurement = true;
